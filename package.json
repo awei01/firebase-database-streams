@@ -1,0 +1,44 @@
+{
+  "name": "firebase-repository",
+  "version": "0.0.0",
+  "description": "A repository for managing firebase data refs",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "node ./scripts/clean.js",
+    "dist": "node ./scripts/build.js",
+    "build": "npm run clean && npm run dist",
+    "test": "karma start ./karma.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:awei01/firebase-repository.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-stage-2": "^6.24.1",
+    "chalk": "^2.0.1",
+    "eslint": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.8.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jasmine-core": "^2.6.3",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.3",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.6.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {}
+}
