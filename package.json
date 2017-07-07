@@ -2,7 +2,7 @@
   "name": "firebase-repository",
   "version": "0.0.2",
   "description": "A repository for managing firebase data refs",
-  "main": "dist/index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "clean": "node ./scripts/clean.js",
     "dist": "node ./scripts/build.js",

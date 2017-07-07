@@ -4,19 +4,24 @@ var webpack = require('webpack')
 var pkg = require('./package.json')
 var pathInfo = pkg.main.split('/')
 var folder = pathInfo[0]
-var filename = pathInfo[1]
 var library = pkg.name
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: {
+    index: path.join(__dirname, 'src', 'index.js'),
+    'index.min': path.join(__dirname, 'src', 'index.js')
+  },
   output: {
     path: path.join(__dirname, folder),
-    filename: filename,
+    filename: '[name].js',
     // library: library,
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ minimize: true })
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true
+    })
   ]
 }

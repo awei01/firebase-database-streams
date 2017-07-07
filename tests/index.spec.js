@@ -151,8 +151,16 @@ function fakeRef (name) {
       if (!calls.length) {
         throw new Error(`fakeRef [${name}] on() not called`)
       }
+
+      // make the snap
+      const snap = {
+        val () {
+          return val
+        }
+      }
+
       calls.forEach((call) => {
-        call.args[1](val)
+        call.args[1](snap)
       })
     }
   }
