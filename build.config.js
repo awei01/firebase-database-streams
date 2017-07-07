@@ -8,7 +8,7 @@ var filename = pathInfo[1]
 var library = pkg.name
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'foo.js'),
+  entry: path.join(__dirname, 'src', 'index.js'),
   output: {
     path: path.join(__dirname, folder),
     filename: filename,
