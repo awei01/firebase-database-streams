@@ -3,8 +3,8 @@ import Repository from '@'
 describe('Repository()', () => {
   describe('fetch()', () => {
     it(`called with [ref]
-        returns stream() of [undefined]`
-      , () => {
+        returns stream() of [undefined]`,
+      () => {
         const { fetch } = Repository()
         const ref = fakeRef('foo')
         const stream = fetch(ref)
@@ -12,85 +12,23 @@ describe('Repository()', () => {
         expect(stream()).toBe(undefined)
       })
 
-    describe('snapshot updates', () => {
-      it(`called with [ref]
-          and snapshot updates with null
-          returns stream() of [null]`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
+    it(`called with [ref]
+        and snapshot updates with [result]
+        returns stream() of [result]`,
+      () => {
+        const { fetch } = Repository()
+        const ref = fakeRef('foo')
+        const stream = fetch(ref)
 
-          ref.mockVal(null)
+        ref.mockVal('result')
 
-          expect(stream()).toBe(null)
-        })
-      it(`called with [ref]
-          and snapshot updates with [object]
-          returns stream() of { ...object, $key: ref.toString() }`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
-
-          ref.mockVal({ foo: 1 })
-
-          expect(stream()).toEqual({ foo: 1, $key: 'foo.url' })
-        })
-      it(`called with [ref]
-          and snapshot updates with [array]
-          returns stream() of { ...array, $key: ref.toString() }`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
-
-          ref.mockVal(['foo', 'bar'])
-
-          expect(stream()).toEqual({ 0: 'foo', 1: 'bar', $key: 'foo.url' })
-        })
-      it(`called with [ref]
-          and snapshot updates with [string]
-          returns stream() of [string] }`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
-
-          ref.mockVal('result')
-
-          expect(stream()).toEqual('result')
-        })
-      it(`called with [ref]
-          and snapshot updates with [number]
-          returns stream() of [number] }`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
-
-          ref.mockVal(1)
-
-          expect(stream()).toEqual(1)
-        })
-      it(`called with [ref]
-          and snapshot updates with [boolean]
-          returns stream() of [boolean] }`
-        , () => {
-          const { fetch } = Repository()
-          const ref = fakeRef('foo')
-          const stream = fetch(ref)
-
-          ref.mockVal(true)
-
-          expect(stream()).toEqual(true)
-        })
-    })
+        expect(stream()).toBe('result')
+      })
 
     describe('memoization', () => {
       it(`called with [ref] twice where ref is same,
-          returns same stream`
-        , () => {
+          returns same stream`,
+        () => {
           const { fetch } = Repository()
           const ref1 = fakeRef('foo')
           const ref2 = fakeRef('foo')
@@ -104,8 +42,8 @@ describe('Repository()', () => {
           expect(stream2()).toBe('new data')
         })
       it(`called with [ref] twice where ref is different,
-          returns independent streams`
-        , () => {
+          returns independent streams`,
+        () => {
           const { fetch } = Repository()
           const ref1 = fakeRef('foo')
           const ref2 = fakeRef('bar')
@@ -118,8 +56,8 @@ describe('Repository()', () => {
           expect(stream2()).toBe(undefined)
         })
       it(`called with [ref] on 2 Repository() where ref is same,
-          returns independent streams`
-        , () => {
+          returns independent streams`,
+        () => {
           const repo1 = Repository()
           const repo2 = Repository()
           const ref = fakeRef('foo')
