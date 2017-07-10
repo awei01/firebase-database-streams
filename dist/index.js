@@ -73,11 +73,22 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["default"] = extractUrlFromRef;
+function extractUrlFromRef(ref) {
+  return ref.toString();
+}
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 module.exports = function _isPlaceholder(a) {
@@ -88,7 +99,7 @@ module.exports = function _isPlaceholder(a) {
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = function _arity(n, fn) {
@@ -111,10 +122,10 @@ module.exports = function _arity(n, fn) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _isPlaceholder = __webpack_require__(0);
+var _isPlaceholder = __webpack_require__(1);
 
 
 /**
@@ -137,7 +148,7 @@ module.exports = function _curry1(fn) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = function _arity(n, fn) {
@@ -160,11 +171,11 @@ module.exports = function _arity(n, fn) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curry1 = __webpack_require__(15);
-var _isPlaceholder = __webpack_require__(5);
+var _curry1 = __webpack_require__(16);
+var _isPlaceholder = __webpack_require__(6);
 
 
 /**
@@ -194,7 +205,7 @@ module.exports = function _curry2(fn) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = function _isPlaceholder(a) {
@@ -205,13 +216,13 @@ module.exports = function _isPlaceholder(a) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var curryN = __webpack_require__(10);
+var curryN = __webpack_require__(11);
 
 // Utility
 function isFunction(obj) {
@@ -841,12 +852,12 @@ module.exports = flyd;
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _arity = __webpack_require__(3);
-var _curry2 = __webpack_require__(4);
-var _has = __webpack_require__(16);
+var _arity = __webpack_require__(4);
+var _curry2 = __webpack_require__(5);
+var _has = __webpack_require__(17);
 
 
 /**
@@ -891,11 +902,11 @@ module.exports = _curry2(function memoizeWith(mFn, fn) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _concat = __webpack_require__(13);
-var _createPartialApplicator = __webpack_require__(14);
+var _concat = __webpack_require__(14);
+var _createPartialApplicator = __webpack_require__(15);
 
 
 /**
@@ -930,25 +941,25 @@ module.exports = _createPartialApplicator(_concat);
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["default"] = Repository;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ramda_src_partial__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ramda_src_partial__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ramda_src_partial___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_ramda_src_partial__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_flyd__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_flyd__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_flyd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_flyd__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__extractUrlFromRef__ = __webpack_require__(0);
 
 
 
 
-function extractKeyFromRef(ref) {
-  return ref.toString();
-}
+
+
 function refreshStream(stream, snap) {
   stream(snap.val());
 }
@@ -959,7 +970,7 @@ function bindRefToStream(ref) {
 }
 
 function Repository() {
-  var fetch = __WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith___default()(extractKeyFromRef, bindRefToStream);
+  var fetch = __WEBPACK_IMPORTED_MODULE_1_ramda_src_memoizeWith___default()(__WEBPACK_IMPORTED_MODULE_3__extractUrlFromRef__["default"], bindRefToStream);
 
   return {
     fetch: fetch
@@ -967,13 +978,13 @@ function Repository() {
 }
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _arity = __webpack_require__(1);
-var _curry1 = __webpack_require__(2);
-var _curry2 = __webpack_require__(11);
-var _curryN = __webpack_require__(12);
+var _arity = __webpack_require__(2);
+var _curry1 = __webpack_require__(3);
+var _curry2 = __webpack_require__(12);
+var _curryN = __webpack_require__(13);
 
 
 /**
@@ -1027,11 +1038,11 @@ module.exports = _curry2(function curryN(length, fn) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curry1 = __webpack_require__(2);
-var _isPlaceholder = __webpack_require__(0);
+var _curry1 = __webpack_require__(3);
+var _isPlaceholder = __webpack_require__(1);
 
 
 /**
@@ -1061,11 +1072,11 @@ module.exports = function _curry2(fn) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _arity = __webpack_require__(1);
-var _isPlaceholder = __webpack_require__(0);
+var _arity = __webpack_require__(2);
+var _isPlaceholder = __webpack_require__(1);
 
 
 /**
@@ -1107,7 +1118,7 @@ module.exports = function _curryN(length, received, fn) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -1144,11 +1155,11 @@ module.exports = function _concat(set1, set2) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _arity = __webpack_require__(3);
-var _curry2 = __webpack_require__(4);
+var _arity = __webpack_require__(4);
+var _curry2 = __webpack_require__(5);
 
 
 module.exports = function _createPartialApplicator(concat) {
@@ -1161,10 +1172,10 @@ module.exports = function _createPartialApplicator(concat) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _isPlaceholder = __webpack_require__(5);
+var _isPlaceholder = __webpack_require__(6);
 
 
 /**
@@ -1187,7 +1198,7 @@ module.exports = function _curry1(fn) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = function _has(prop, obj) {

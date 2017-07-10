@@ -1,3 +1,3 @@
-# firebase-repository
-Module to help manage firebase data references
+# firebase-database-streams
+Bind firebase data refs to streams
 

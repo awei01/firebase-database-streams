@@ -1,7 +1,7 @@
 {
-  "name": "firebase-repository",
-  "version": "0.0.4",
-  "description": "A repository for managing firebase data refs",
+  "name": "firebase-database-streams",
+  "version": "0.0.5",
+  "description": "Bind firebase data refs to streams",
   "main": "dist/index.min.js",
   "scripts": {
     "clean": "node ./scripts/clean.js",
@@ -13,7 +13,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:awei01/firebase-repository.git"
+    "url": "git@github.com:awei01/firebase-database-streams.git"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

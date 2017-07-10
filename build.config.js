@@ -9,7 +9,9 @@ var library = pkg.name
 module.exports = {
   entry: {
     index: path.join(__dirname, 'src', 'index.js'),
-    'index.min': path.join(__dirname, 'src', 'index.js')
+    'index.min': path.join(__dirname, 'src', 'index.js'),
+    extractUrlFromRef: path.join(__dirname, 'src', 'extractUrlFromRef.js'),
+    'extractUrlFromRef.min': path.join(__dirname, 'src', 'extractUrlFromRef.js')
   },
   output: {
     path: path.join(__dirname, folder),

@@ -2,9 +2,8 @@ import partial from 'ramda/src/partial'
 import memoizeWith from 'ramda/src/memoizeWith'
 import { stream } from 'flyd'
 
-function extractKeyFromRef (ref) {
-  return ref.toString()
-}
+import extractUrlFromRef from './extractUrlFromRef'
+
 function refreshStream (stream, snap) {
   stream(snap.val())
 }
@@ -15,7 +14,7 @@ function bindRefToStream (ref) {
 }
 
 export default function Repository () {
-  const fetch = memoizeWith(extractKeyFromRef, bindRefToStream)
+  const fetch = memoizeWith(extractUrlFromRef, bindRefToStream)
 
   return {
     fetch
