@@ -1,6 +1,6 @@
 {
   "name": "firebase-repository",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A repository for managing firebase data refs",
   "main": "dist/index.min.js",
   "scripts": {
