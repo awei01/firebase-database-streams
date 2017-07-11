@@ -1,4 +1,13 @@
-import Repository from '@'
+import Repository, { extractUrl, extractKey } from '@'
+
+describe('exported methods', () => {
+  it('extractUrl() should be a function', () => {
+    expect(extractUrl).toBe(require('@/extractUrl').default)
+  })
+  it('extractKey() should be a function', () => {
+    expect(extractKey).toBe(require('@/extractKey').default)
+  })
+})
 
 describe('Repository()', () => {
   describe('fetch()', () => {
