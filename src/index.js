@@ -15,7 +15,7 @@ function bindRefToStream (ref) {
   return value
 }
 
-export default function Repository () {
+export default function Streamer () {
   const fetch = memoizeWith(extractUrl, bindRefToStream)
 
   return {
